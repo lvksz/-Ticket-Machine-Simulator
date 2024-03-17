@@ -4,7 +4,27 @@
 <ul style="font-size:larger;">
 
 <li>
-    <span style="font-size:22px;">Wstępny opis działania programu</span>
+    <span style="font-size:22px;">Wstępny opis działania programu</span><br>
+    Symulator automatu biletowego jest aplikacją zaprojektowaną do naśladowania funkcjonalności rzeczywistego automatu 
+    biletowego. Symulator oferuje szereg funkcji, odzwierciedlających te dostepne w fizycznych automatach biletowych:
+    <ul>
+        <li>
+        wybór rodzaju biletu
+        </li>
+        <li>
+        wybór sterfy biletowej
+        </li>
+        <li>
+        określenie liczby biletów
+        </li>
+        <li>
+        wybór metody płatności
+        </li>
+        <li>
+        generowanie i drukowanie biletu
+        </li>
+    </ul>
+
 </li>
 
 <li>
@@ -33,7 +53,7 @@
 <li>
     <span style="font-size:22px;">
     Raport ze stosowania metodologii programowania zwinnego.
-    </span> <br><br>
+    </span> <br>
     <span>
     W trakcie realizacji projektu zadania będą realizowane w sprintach. W Jira utworzony został zespół, 
     wydzielone zadania i przydzielone dla każdego członka zespołu.
