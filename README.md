@@ -51,6 +51,35 @@
 
 <li>
     <span style="font-size:22px;"> Wymagania funkcjonalne i niefunkcjonalne</span>
+    </br><span> 
+        Wymagania funkcjonalne 
+    </span>
+<ul>
+<li>Dodawanie biletów do koszyka:</br>
+Użytkownik może dodawać nowe bilety do koszyka</li>
+<li>Edytowanie ilości biletów w koszyku:</br>
+Użytkownik może edytować bilety w swoim koszyku</li>
+<li>Usuwanie biletów z koszyka:</br>
+Użytkownik może usuwać bilety z koszyka</li>
+<li>Przeglądanie dostępnych typów biletu (czasowy, typ ulgi):</br>
+Użytkownik może wybierać pożądany typ biletu oraz rodzaj ulgi</li>
+<li>Wybór metody płatności:</br>
+Użytkownik może wybrać którą z metod płatności chce użyć, aby opłacić należną sumę</li>
+
+</ul>
+<br><span>Wymagania niefunkcjonalne</span>
+<ul>
+
+<li>Wydajność:</br>
+Aplikacja powinna działać płynnie nawet przy dużej ilości biletów.</li>
+<li>Interfejs użytkownika:</br>
+Interfejs powinien być intuicyjny, łatwy w nawigacji i estetyczny.</li>
+<li>Elastyczna płatność:</br>
+Biletomat powinien obsługiwać różne metody płatności, takie jak karta płatnicza, karta zbliżeniowa, gotówka, płatności zbliżeniowe.</li>
+<li>Responsywność:</br>
+Aplikacja powinna reagować bez opóźnień na interakcje użytkownika</li>
+
+</ul>
 </li>
 
 <li>
