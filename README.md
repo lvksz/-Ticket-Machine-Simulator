@@ -47,6 +47,8 @@
 
 <li>
     <span style="font-size:22px;">Diagram przypadków użycia.</span>
+<img src="ReadmeAssets/EtapI/image1.png" alt="Screenshot diagramu przypadków użycia" title="Diagram przypadków użycia">
+    
 </li>
 
 <li>
