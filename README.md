@@ -72,7 +72,7 @@
     W trakcie realizacji projektu zadania będą realizowane w sprintach. W Jira utworzony został zespół, 
     wydzielone zadania i przydzielone dla każdego członka zespołu.
     </span>
-<img src="ReadmeAssets/EtapI/img_5.png">
+<img src="ReadmeAssets/EtapI/img_5.png" alt="Screenshot tablicy Jira" title="Screenshot tablicy Jira">
     
 </li>
 </ul>
