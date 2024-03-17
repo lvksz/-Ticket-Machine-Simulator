@@ -31,7 +31,15 @@
 </li>
 
 <li>
-    <span style="font-size:22px;">Raport ze stosowania metodologii programowania zwinne</span>
+    <span style="font-size:22px;">
+    Raport ze stosowania metodologii programowania zwinnego.
+    </span> <br><br>
+    <span>
+    W trakcie realizacji projektu zadania będą realizowane w sprintach. W Jira utworzony został zespół, 
+    wydzielone zadania i przydzielone dla każdego członka zespołu.
+    </span>
+<img src="ReadmeAssets/EtapI/img_5.png">
+    
 </li>
 </ul>
 
