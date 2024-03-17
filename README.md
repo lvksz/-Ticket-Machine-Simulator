@@ -29,6 +29,20 @@
 
 <li>
     <span style="font-size:22px;">Analiza MoSCoW</span>
+    <ul>
+        <li>
+            Must:<br> funkcjonalnośći w obrębie zarządzania biletami, responsywność interefejsu użytkownika
+        </li>
+        <li>
+            Should:<br> dostępność kilku wersji językowych apliakcji, możliwośc dostosowania motywu interfejsu użytkownika 
+        </li>
+        <li>
+            Could:<br> interaktywna instrukcja obsługi biletomatu
+        </li>
+        <li>
+            Wont:<br> możliwość zakupu biletu miesięcznego 
+        </li>
+    </ul>
 </li>
 
 <li>
@@ -42,7 +56,7 @@
 <li>
     <span style="font-size:22px;">
     Wybranie systemu kontroli wersji oraz platformy hosting dla niej, utworzenie repozytorium
-    </span> <br><br>
+    </span>
     <span>
         Jako system kontroli wersji wybrano Git, platformą hostingową jest GitHub.
         Projekt został zainicjalizowany na platformie.
