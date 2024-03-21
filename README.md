@@ -1,111 +1,62 @@
 # Ticket Machine Simulator
-<details>
-<summary>Etap I</summary>
-<ul style="font-size:larger;">
+***
+## Etap I
 
-<li>
-    <span style="font-size:22px;">Wstępny opis działania programu</span><br>
+- **Wstępny opis działania programu**
+
     Symulator automatu biletowego jest aplikacją zaprojektowaną do naśladowania funkcjonalności rzeczywistego automatu 
     biletowego. Symulator oferuje szereg funkcji, odzwierciedlających te dostepne w fizycznych automatach biletowych:
-    <ul>
-        <li>
-        wybór rodzaju biletu
-        </li>
-        <li>
-        wybór sterfy biletowej
-        </li>
-        <li>
-        określenie liczby biletów
-        </li>
-        <li>
-        wybór metody płatności
-        </li>
-        <li>
-        generowanie i drukowanie biletu
-        </li>
-    </ul>
+  - wybór rodzaju biletu
+  - wybór sterfy biletowej
+  - określenie liczby biletów
+  - wybór metody płatności
+  - generowanie i drukowanie biletu
 
-</li>
 
-<li>
-    <span style="font-size:22px;">Analiza MoSCoW</span>
-    <ul>
-        <li>
-            Must:<br> funkcjonalnośći w obrębie zarządzania biletami, responsywność interefejsu użytkownika
-        </li>
-        <li>
-            Should:<br> dostępność kilku wersji językowych apliakcji, możliwośc dostosowania motywu interfejsu użytkownika 
-        </li>
-        <li>
-            Could:<br> interaktywna instrukcja obsługi biletomatu
-        </li>
-        <li>
-            Wont:<br> możliwość zakupu biletu miesięcznego 
-        </li>
-    </ul>
-</li>
+- **Analiza MoSCoW**
+  - Must:
+  
+    funkcjonalnośći w obrębie zarządzania biletami, responsywność interefejsu użytkownika
+  - Should:
+  
+    dostępność kilku wersji językowych apliakcji, możliwośc dostosowania motywu interfejsu użytkownika 
+  - Could:
 
-<li>
-    <span style="font-size:22px;">Diagram przypadków użycia.</span>
-<img src="ReadmeAssets/EtapI/image1.png" alt="Screenshot diagramu przypadków użycia" title="Diagram przypadków użycia">
-    
-</li>
+    interaktywna instrukcja obsługi biletomatu
+  - Could:
 
-<li>
-    <span style="font-size:22px;"> Wymagania funkcjonalne i niefunkcjonalne</span>
-    </br><span> 
-        Wymagania funkcjonalne 
-    </span>
-<ul>
-<li>Dodawanie biletów do koszyka:</br>
-Użytkownik może dodawać nowe bilety do koszyka</li>
-<li>Edytowanie ilości biletów w koszyku:</br>
-Użytkownik może edytować bilety w swoim koszyku</li>
-<li>Usuwanie biletów z koszyka:</br>
-Użytkownik może usuwać bilety z koszyka</li>
-<li>Przeglądanie dostępnych typów biletu (czasowy, typ ulgi):</br>
-Użytkownik może wybierać pożądany typ biletu oraz rodzaj ulgi</li>
-<li>Wybór metody płatności:</br>
-Użytkownik może wybrać którą z metod płatności chce użyć, aby opłacić należną sumę</li>
+    możliwość zakupu biletu miesięcznego 
 
-</ul>
-<br><span>Wymagania niefunkcjonalne</span>
-<ul>
 
-<li>Wydajność:</br>
-Aplikacja powinna działać płynnie nawet przy dużej ilości biletów.</li>
-<li>Interfejs użytkownika:</br>
-Interfejs powinien być intuicyjny, łatwy w nawigacji i estetyczny.</li>
-<li>Elastyczna płatność:</br>
-Biletomat powinien obsługiwać różne metody płatności, takie jak karta płatnicza, karta zbliżeniowa, gotówka, płatności zbliżeniowe.</li>
-<li>Responsywność:</br>
-Aplikacja powinna reagować bez opóźnień na interakcje użytkownika</li>
+- **Diagram przypadków użycia**
+    <img src="ReadmeAssets/EtapI/image1.png" alt="Screenshot diagramu przypadków użycia" title="Diagram przypadków użycia">
 
-</ul>
-</li>
+- **Wymagania funkcjonalnie i niefunkcjonalne**<br>
+    Wymagania funkcjonalne:
+  - Dodawanie biletów do koszyka: Użytkownik może dodawać nowe bilety do koszyka
+  - Edytowanie ilości biletów w koszyku: Użytkownik może edytować bilety w swoim koszyku
+  - Usuwanie biletów z koszyka: Użytkownik może usuwać bilety z koszyka
+  - Przeglądanie dostępnych typów biletu (czasowy, typ ulgi): Użytkownik może wybierać pożądany typ biletu oraz rodzaj ulgi
+  - Wybór metody płatności: Użytkownik może wybrać którą z metod płatności chce użyć, aby opłacić należną sumę
+    <br><br>
+    Wymagania niefukcjonalne:
+  - Wydajność: Aplikacja powinna działać płynnie nawet przy dużej ilości biletów.
+  - Interfejs użytkownika: Interfejs powinien być intuicyjny, łatwy w nawigacji i estetyczny
+  - Elastyczna płatność: Biletomat powinien obsługiwać różne metody płatności, takie jak karta płatnicza, karta zbliżeniowa, gotówka, płatności zbliżeniowe.
+  - Responsywność: Aplikacja powinna reagować bez opóźnień na interakcje użytkownika
+ 
 
-<li>
-    <span style="font-size:22px;">
-    Wybranie systemu kontroli wersji oraz platformy hosting dla niej, utworzenie repozytorium
-    </span>
-    <span>
-        Jako system kontroli wersji wybrano Git, platformą hostingową jest GitHub.
-        Projekt został zainicjalizowany na platformie.
-    </span>
-    <img src="ReadmeAssets/EtapI/github-repo.png" alt="Inicjalizacja repozytorium" title="Inicjalizacja repozytorium"/>
-</li>
+- **Wybranie systemu kontroli wersji oraz platformy hosting dla niej, utworzenie repozytorium**
 
-<li>
-    <span style="font-size:22px;">
-    Raport ze stosowania metodologii programowania zwinnego.
-    </span> <br>
-    <span>
+    Jako system kontroli wersji wybrano Git, platformą hostingową jest GitHub.
+    Projekt został zainicjalizowany na platformie.
+    ![Inicjalizacja repozytorium](ReadmeAssets/EtapI/github-repo.png)
+
+
+- **Raport ze stosowania metodologii programowania zwinnego**
+
     W trakcie realizacji projektu zadania będą realizowane w sprintach. W Jira utworzony został zespół, 
     wydzielone zadania i przydzielone dla każdego członka zespołu.
-    </span>
-<img src="ReadmeAssets/EtapI/img_5.png" alt="Screenshot tablicy Jira" title="Screenshot tablicy Jira">
-    
-</li>
-</ul>
+    ![Screenshot tablicy Jira](ReadmeAssets/EtapI/img_5.png)
 
-</details>
+****
