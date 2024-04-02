@@ -47,8 +47,36 @@
 
 <li>
     <span style="font-size:22px;">Diagram przypadków użycia.</span>
-<img src="ReadmeAssets/EtapI/image1.png" alt="Screenshot diagramu przypadków użycia" title="Diagram przypadków użycia">
+
+```mermaid
+graph LR
     
+    Plb(Przeglądanie list biletów)
+    Zlz(Zarządzanie listą zakupów)
+    Db(Dodanie biletu)
+    Ub(Usunięcie biletu)
+    Wmp(Wybór metody płatności)
+    Wtu(Wybór typu ulgi)
+    Wtb(Wybór typu biletu)
+    
+    Użytkownik---Plb
+    Plb---Zlz
+    Zlz---Db
+    Zlz---Wmp
+    Zlz---Ub
+    Wtu -.->|include|Db
+    Wtb-.->|include|Db
+    subgraph Symulator automatu biletowego
+        Plb
+        Zlz
+        Wmp
+        Ub
+        Db
+        Wtb
+        Wtu
+    end
+```
+
 </li>
 
 <li>
