@@ -5,31 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const basket = document.querySelector('.basket-items');
     const totalPriceElement = document.querySelector('.total-price span');
     const payButton = document.querySelector('.button.pay');
-
-    coinButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            const coinValue = parseFloat(button.dataset.value);
-            payWithCoin(coinValue);
-        });
-    });
-
-    function payWithCoin(coinValue) {
-        let totalToPayElement = document.querySelector('.total-price span');
-        let totalToPay = parseFloat(totalToPayElement.textContent.split(' ')[0]);
-
-        if (totalToPay - coinValue <= 0) {
-            let overpaid = Math.abs(totalToPay - coinValue);
-            if (overpaid > 0) {
-                alert(`Reszta: ${overpaid.toFixed(2)} zł`);
-            }
-
-            clearBasket();
-            totalToPayElement.textContent = '0.00 zł';
-        } else {
-            totalToPay -= coinValue;
-            totalToPayElement.textContent = `${totalToPay.toFixed(2)} zł`;
-        }
-    }
+    const coinButtons = document.querySelectorAll('.coin');
 
     addButton.addEventListener('click', function (event) {
         event.preventDefault();
@@ -55,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error:', error));
     });
+
+    function clearBasket() {
+        basket.innerHTML = '';
+    
+    }
 
     function addTicketToBasket(ticketType, discountLabel, ticketPrice) {
         const ticketElement = document.createElement('div');
@@ -111,10 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
         basket.appendChild(ticketElement);
     }
 
-    function clearBasket() {
-        basket.innerHTML = '';
-    
-    }
 
     function updateTotalPrice(ticketPrice) {
         const currentTotal = parseFloat(totalPriceElement.textContent.split(' ')[0]);
@@ -135,50 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         document.querySelector('.date-time').textContent = dateStr;
     }
-
-    function updatePaymentOnServer(coinValue) {
-        fetch('/update_payment', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ amountPaid: coinValue })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
-
-    payButton.addEventListener('click', function () {
-        const totalAmount = parseFloat(totalPriceElement.textContent.split(' ')[0]);
-
-        fetch('/pay', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({totalAmount})
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert(data.message);
-                basket.innerHTML = '';
-                totalPriceElement.textContent = '0.00 zł';
-            } else {
-                alert(data.message);
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    });
 
     setInterval(updateDateTime, 1000);
     updateDateTime();

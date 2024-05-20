@@ -38,6 +38,7 @@ def add_ticket():
 def remove_ticket():
     data = request.get_json()
     ticket_price = data.get('ticketPrice')
+
     return jsonify({'success': True})
 
 @app.route('/pay', methods=['POST'])
@@ -54,6 +55,7 @@ def pay():
 def update_payment():
     data = request.get_json()
     amount_paid = data.get('amountPaid', 0)
+
     return jsonify({'success': True, 'amountPaid': amount_paid})
 
 if __name__ == "__main__":
