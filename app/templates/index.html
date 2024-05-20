@@ -9,6 +9,68 @@
     <link rel="icon" href="../static/images/favicon.svg">
 </head>
 <body>
-    <div class="coins-container"></div>
-    <div class="app"></div>
+    <div class="coins-container">
+        <button class="coin" data-value="0.01"></button>
+        <button class="coin" data-value="0.02"></button>
+        <button class="coin" data-value="0.05"></button>
+        <button class="coin" data-value="0.10"></button>
+        <button class="coin" data-value="0.20"></button>
+        <button class="coin" data-value="0.50"></button>
+        <button class="coin" data-value="1.00"></button>
+        <button class="coin" data-value="2.00"></button>
+        <button class="coin" data-value="5.00"></button>
+    </div>
+    <div class="app">
+            <div class="ticket-interface-container">
+                <div class="header">
+                    <div class="time">
+                        <div class="location">Kraków</div>
+                        <div class="date-time">20.05.2024 22:22</div>
+                    </div>
+                    <div class="title">
+                        <div class="logo">
+                            <img src="../static/images/favicon.svg" alt="Logo" class="logo" width="100px">
+                        </div>
+                        KRAK-TRANS - Automat Biletowy</div>
+                </div>
+        
+                <div class="ticket-interface">
+                    <div class="dropdown ticket-type">
+                        <select id="ticket-type">
+                            <option value="" disabled selected>Wybierz typ biletu</option>
+                            <option value="Bilet 20 minutowy">Bilet 20 minutowy</option>
+                            <option value="Bilet 60 minutowy">Bilet 30 minutowy</option>
+                            <option value="Bilet 24 godzinny">Bilet 24 godzinny</option>
+                            <option value="Bilet 72 godzinny">Bilet 72 godzinny</option>
+                        </select>
+                    </div>
+                    <div class="dropdown discount-type">
+                        <select id="discount-type">
+                            <option value="" disabled selected>Wybierz ulgę</option>
+                            <option value="normal">Normalny (100%)</option>
+                            <option value="reduced">Ulgowy (50%)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ticket-button">
+                    <button class="button add-ticket">Dodaj</button>
+                </div>
+                
+                <div class="basket">
+                    <div class="basket-title">Koszyk</div>
+                    <div class="basket-items">
+                    </div>
+                </div>
+                
+                <div class="payment-actions">
+                    <div class="total-price">Do zapłaty: <span>0.00 zł</span></div>
+                    <div class="pay-button">
+                        <button class="button pay">Zapłać kartą</button>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <script src="../static/script.js"></script>
 </body>
+</html>
