@@ -149,3 +149,9 @@ graph LR
   ![koncepcja wizualna programu](ReadmeAssets/EtapII/figma_1.png)
   
   ![koncepcja wizualna programu](ReadmeAssets/EtapII/figma_2.png)
+
+- **Raport ze stosowania metodologi programowania zwinnego**
+
+  ![Raport](ReadmeAssets/EtapII/jira_1.png)
+  
+  ![Raport](ReadmeAssets/EtapII/jira_2.png)
