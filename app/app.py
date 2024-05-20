@@ -40,6 +40,22 @@ def remove_ticket():
     ticket_price = data.get('ticketPrice')
     return jsonify({'success': True})
 
+@app.route('/pay', methods=['POST'])
+def pay():
+    data = request.get_json()
+    total_amount = data.get('totalAmount')
+    
+    if random.choice([True, False]):
+        return jsonify({'success': True, 'message': 'Płatność zaakceptowana'})
+    else:
+        return jsonify({'success': False, 'message': 'Płatność odrzucona'}), 400
+
+@app.route('/update_payment', methods=['POST'])
+def update_payment():
+    data = request.get_json()
+    amount_paid = data.get('amountPaid', 0)
+    return jsonify({'success': True, 'amountPaid': amount_paid})
+
 if __name__ == "__main__":
     app.run(debug=True)
 
