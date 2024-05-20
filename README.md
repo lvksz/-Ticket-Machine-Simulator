@@ -143,3 +143,9 @@ graph LR
     ![Screenshot tablicy Jira](ReadmeAssets/EtapI/img_5.png)
 
 ****
+## Etap 2
+- **Przygotowanie koncepcji wizualnej programu**
+
+  ![koncepcja wizualna programu](ReadmeAssets/EtapII/figma_1.png)
+  
+  ![koncepcja wizualna programu](ReadmeAssets/EtapII/figma_2.png)
