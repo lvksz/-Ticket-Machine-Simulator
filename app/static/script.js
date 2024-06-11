@@ -18,24 +18,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function payWithCoin(coinValue) {
-        currentTotalPaid += coinValue;
-        updatePaymentOnServer(currentTotalPaid);
-
         let totalToPayElement = document.querySelector('.total-price span');
         let totalToPay = parseFloat(totalToPayElement.textContent.split(' ')[0]);
-    
-        if (currentTotalPaid >= totalToPay) {
-            let overpaid = currentTotalPaid - totalToPay;
+
+        if (totalToPay - coinValue <= 0) {
+            let overpaid = Math.abs(totalToPay - coinValue);
             if (overpaid > 0) {
                 alert(`Reszta: ${overpaid.toFixed(2)} zł`);
             }
             processPayment('cash');
             clearBasket();
             totalToPayElement.textContent = '0.00 zł';
-            currentTotalPaid = 0;
+
         } else {
-            let remaining = totalToPay - currentTotalPaid;
-            totalToPayElement.textContent = `${remaining.toFixed(2)} zł`;
+            totalToPay -= coinValue;
+            totalToPayElement.textContent = `${totalToPay.toFixed(2)} zł`;
         }
     }
 
