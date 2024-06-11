@@ -214,6 +214,20 @@ select {
     background-color: #FFFFFF; 
 }
 
+.change-paper {
+    position: absolute; 
+    bottom: -100px; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.paper-status {
+    position: absolute;
+    bottom: 120px;
+}
+
 .button {
     width: auto; 
     min-width: 427px; 

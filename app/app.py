@@ -1,5 +1,7 @@
+import os
 import random
-from flask import Flask, render_template, request, jsonify
+from datetime import datetime
+from flask import Flask, render_template, request, jsonify, send_file
 
 app = Flask(__name__)
 
@@ -9,6 +11,8 @@ TICKET_PRICES = {
     'Bilet 24 godzinny': 10,
     'Bilet 72 godzinny': 25
 }
+
+paper_state = 3
 
 @app.route('/')
 def index():
@@ -43,21 +47,35 @@ def remove_ticket():
 
 @app.route('/pay', methods=['POST'])
 def pay():
+    global paper_state
     data = request.get_json()
     total_amount = data.get('totalAmount')
+    payment_method = data.get('paymentMethod')
+
+    if paper_state <= 0:
+        return jsonify({'success': False, 'message': 'Brak papieru. Proszę wymienić papier.'}), 400
+
+    ticket_filename = f"Bilet-KrakTrans-{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.txt"
+    ticket_path = os.path.join(os.getcwd(), ticket_filename)
+
+    ticket_content = f"Krak-Trans\n_________________________\nData: {datetime.now().strftime('%Y-%m-%d')}\nGodzina: {datetime.now().strftime('%H:%M:%S')}\nTyp biletu: {data.get('ticketType')}\nUlga: {data.get('discountLabel')}\nPłatność: {'Karta' if payment_method == 'card' else 'Gotówka'}"
+    with open(ticket_path, 'w', encoding='utf-8') as file:
+        file.write(ticket_content)
     
-    if random.choice([True, False]):
-        return jsonify({'success': True, 'message': 'Płatność zaakceptowana'})
-    else:
-        return jsonify({'success': False, 'message': 'Płatność odrzucona'}), 400
+    paper_state -= 1
 
-@app.route('/update_payment', methods=['POST'])
-def update_payment():
-    data = request.get_json()
-    amount_paid = data.get('amountPaid', 0)
+    return jsonify({'success': True, 'message': 'Płatność zaakceptowana', 'ticketFilename': ticket_filename, 'paperState': paper_state})
 
-    return jsonify({'success': True, 'amountPaid': amount_paid})
+@app.route('/download_ticket/<filename>', methods=['GET'])
+def download_ticket(filename):
+    ticket_path = os.path.join(os.getcwd(), filename)
+    return send_file(ticket_path, as_attachment=True)
+
+@app.route('/replace_paper', methods=['POST'])
+def replace_paper():
+    global paper_state
+    paper_state = 3
+    return jsonify({'success': True, 'paperState': paper_state})
 
 if __name__ == "__main__":
     app.run(debug=True)
-
