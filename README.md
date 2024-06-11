@@ -16,7 +16,7 @@
 - **Analiza MoSCoW**
   - Must:
   
-    funkcjonalności w obrębie zarządzania biletami, responsywność interefejsu użytkownika
+    funkcjonalności w obrębie zarządzania biletami
   - Should:
   
     dostępność kilku wersji językowych apliakcji, możliwość dostosowania motywu interfejsu użytkownika 
@@ -113,7 +113,6 @@ graph LR
 **Przepływ zdarzeń:**
 1. Użytkownik wybiera preferowaną metodę płatności (np. gotówka, karta, płatność mobilna).
 2. System przetwarza płatność i wydaje bilet.
-
 **Wymagania funkcjonalnie i niefunkcjonalne**<br>
     Wymagania funkcjonalne:
   - Dodawanie biletów do koszyka: Użytkownik może dodawać nowe bilety do koszyka
@@ -155,3 +154,28 @@ graph LR
   ![Raport](ReadmeAssets/EtapII/jira_1.png)
   
   ![Raport](ReadmeAssets/EtapII/jira_2.png)
+
+****
+## Etap 3
+- **Testy jednostkowe**
+
+  Pliki app.py i test_app.py mają odpowiednio 92% i 95% pokrycia kodu.
+
+  Funkcje przetestowane:
+
+  - dodawanie biletu: test z poprawnymi (odpowiedź serwera, odpowiedź zawierająca typ biletu, zniżkę i cenę) oraz błędnymi danymi (odpowiedź serwera, informację o błędzie)
+
+  - usuwanie biletu: weryfikacja odpowiedzi serwera oraz informacji o powodzeniu 
+
+  - proces płatności: test akceptacji i odrzucenia płatności (odpowiedź serwera i informacja o błędzie)
+
+  - wymiana papieru w biletomacie: weryfikacja odpowiedzi serwera dotyczącą zmiany stanu papieru oraz informacja o powodzeniu
+
+  - pobieranie biletu: weryfikacja pobrania pliku (odpowiedź serwera, weryfikacja typu MIME oraz nagłówka pobranego pliku)
+
+  ![Testy jednostkowe](ReadmeAssets/EtapIII/test.jpg)
+- **Raport ze stosowania metodologi programowania zwinnego**
+
+
+  Raport sprintu 3.
+  ![Raport](ReadmeAssets/EtapIII/jira.jpg)
